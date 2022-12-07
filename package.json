@@ -20,6 +20,6 @@
     "commander": "^9.4.1"
   },
   "bin": {
-    "code": "bin/gendiff.js"
+    "gendiff": "bin/gendiff.js"
   }
 }
