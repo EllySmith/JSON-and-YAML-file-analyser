@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-import path from 'path';
+import * as path from 'path';
 
 import filePath from './filePath.js';
 
@@ -23,4 +23,6 @@ const parsPath = (filepath1, filepath2) => {
   return diff;
 };
 
-export default parsPath;
+export {
+  getPath, readFile, getFileFormat, parsPath,
+};
