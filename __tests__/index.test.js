@@ -1,6 +1,7 @@
-import compareObjects from '../src/compare';
-import { testFile1, testFile2 } from '../__fixtures__';
+import { readFileSync } from 'fs';
+import getPath from '../src/index';
 
-test('compareObjects', () => {
-  expect(compareObjects(testFile1.json, testFile2.json)).toEqual('something');
+test('get path', () => {
+  expect(getPath('../__fixtures__/testFile1.json')).toEqual('something');
+  expect(1 + 3).toEqual(4);
 });
