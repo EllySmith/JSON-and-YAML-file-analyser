@@ -1,0 +1,12 @@
+{
+     "samevaluestring": "string1",
+     "samevaluenumber": 123,
+     "samevaluearray": [123, 132, 231],
+
+     "differentvaluestring": "string3",
+     "differentvaluenumber": 456,
+     "differentvaluearray": [648, 263, 563],
+
+     "secondfilestring": "the second file", 
+     "secondfilenumber": 59261
+}
