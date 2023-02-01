@@ -23,5 +23,8 @@
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }
