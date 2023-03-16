@@ -23,6 +23,8 @@ const parsPath = (filepath1, filepath2) => {
   return diff;
 };
 
+export default parsPath;
+
 export {
-  getPath, readFile, getFileFormat, parsPath,
+  getPath, readFile, getFileFormat,
 };
