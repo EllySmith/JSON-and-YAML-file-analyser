@@ -1,12 +1,15 @@
 import compareObjects from '../src/compare';
+
+import * as path from 'path';
+
 import {
   getPath, readFile, getFileFormat, parsPath,
 } from '../src/index.js';
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFixturePath = (filename) => path.join(process.cwd(), '__fixtures__', filename);
 
 test('get path', () => {
-  expect(getPath('testfile1.json')).toBe('/Users/ellysmith/hexlet-js/frontend-project-46/file1.json');
+  expect(getPath('testfile1.json')).toBe('/Users/ellysmith/hexlet-js/frontend-project-46/testfile1.json');
 });
 
 test('get file format', () => {

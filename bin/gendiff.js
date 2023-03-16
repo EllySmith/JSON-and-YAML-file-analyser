@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 
-import parsPath from '../src/index.js';
+import { parsPath } from '../src/index.js';
 
 const program = new Command();
 
