@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 export default function compareObjects(obj1, obj2) {
-  const linesFirstObject = Object.keys(obj1);
-  const linesSecondObject = Object.keys(obj2);
+  const linesFirstObject = Object.keys(obj1).sort();
+  const linesSecondObject = Object.keys(obj2).sort();
   let resultString = '';
   for (const key of linesFirstObject) {
     if (!linesSecondObject.includes(key)) {

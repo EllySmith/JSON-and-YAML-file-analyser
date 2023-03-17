@@ -21,6 +21,7 @@ const parsPath = (filepath1, filepath2) => {
 
   const resultString = compareObjects(data1, data2).toString();
   console.log(resultString);
+  return resultString;
 };
 
 export {
