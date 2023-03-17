@@ -14,15 +14,15 @@ const getFileFormat = (filename) => path.extname(filename).slice(1);
 
 const parsPath = (filepath1, filepath2) => {
   const path1 = getPath(filepath1);
-  const data1 = filePath(readFile(path1), getFileFormat(filepath1));
+  const data1 = JSON.parse(readFile(path1, 'utf8'));
 
   const path2 = getPath(filepath2);
-  const data2 = filePath(readFile(path2), getFileFormat(filepath2));
+  const data2 = JSON.parse(readFile(path2, 'utf8'));
 
-  const diff = compareObjects(data1, data2);
-  return diff;
+  const resultString = compareObjects(data1, data2).toString();
+  console.log(resultString);
 };
 
 export {
-  getPath, readFile, getFileFormat, parsPath
+  getPath, readFile, getFileFormat, parsPath,
 };

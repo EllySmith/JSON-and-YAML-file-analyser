@@ -1,14 +1,7 @@
-  samevaluestring: string1
-  samevaluenumber: 123
-+ samevaluearray: 123,132,231
-+ samevaluearray: 123,132,231
-+ differentvaluestring: string2
-+ differentvaluestring: string3
-+ differentvaluenumber: 987
-+ differentvaluenumber: 456
-+ differentvaluearray: 987,765,876
-+ differentvaluearray: 648,263,563
-- firstfilestring: the first file
-- firstfilenumber: 46128
-+ secondfilestring: the second file
-+ secondfilenumber: 59261
+  host: hexlet.io
++ timeout: 50
++ timeout: 20
+- proxy: 123.234.53.22
+- follow: false
+  test: test
++ verbose: true
