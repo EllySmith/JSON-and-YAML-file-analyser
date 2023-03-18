@@ -1,25 +1,24 @@
 import _ from 'lodash';
 
-export default function compareObjects(obj1, obj2) {
-  const linesFirstObject = Object.keys(obj1).sort();
-  const linesSecondObject = Object.keys(obj2).sort();
-  let resultString = '';
-  for (const key of linesFirstObject) {
-    if (!linesSecondObject.includes(key)) {
-      resultString = `${resultString}`+`- ${key}: ${obj1[key]}\n`;
-    }
-    if (linesSecondObject.includes(key) && Object.is(obj1[key], obj2[key])) {
-      resultString = `${resultString}`+`  ${key}: ${obj1[key]}\n`;
-    }
-    if (linesSecondObject.includes(key) && !Object.is(obj1[key], obj2[key])) {
-      resultString = `${resultString}`+`  ${key}: ${obj1[key]}\n`;
-      resultString = `${resultString}`+`+ ${key}: ${obj2[key]}\n`;
-    }
+const compareObjects = (obj1, obj2) => {
+  {
+    const keys = _.sortBy(_.union(_.keys(obj1), _.keys(obj2)));
+    const diff = keys.flatMap((key) => {
+      if (!_.has(obj1, key)) {
+        return { key, value: obj2[key], state: 'added' };
+      }
+      if (!_.has(obj2, key)) {
+        return { key, value: obj1[key], state: 'removed' };
+      }
+      if (obj1[key] === obj2[key]) {
+        return { key, value: obj1[key], state: 'unchanged' };
+      }
+      if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
+        return { key, value: compareObjects(obj1[key], obj2[key]), state: 'complex' };
+      }
+      return { key, value: { oldValue: obj1[key], newValue: obj2[key] }, state: 'updated' };
+    });
+    return diff;
   }
-  for (const key of linesSecondObject) {
-    if (!linesFirstObject.includes(key)) {
-      resultString = `${resultString}`+`+ ${key}: ${obj2[key]}\n`;
-    }
-  }
-  return resultString;
-}
+};
+export default compareObjects;

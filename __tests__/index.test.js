@@ -29,3 +29,10 @@ test('compare yaml files', () => {
   const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/result.txt');
   expect(parsPath(fileOne, fileTwo)).toBe(result);
 });
+
+test('compare in plain format', () => {
+  const fileOne = getFixturePath('testfile1.json');
+  const fileTwo = getFixturePath('testfile2.json');
+  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/plainresult.txt');
+  expect(parsPath(fileOne, fileTwo, 'plain')).toBe(result);
+});
