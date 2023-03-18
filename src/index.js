@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-import formatStylish from './stylishFormat.js';
+import formatStylish from './formatters/stylishFormat.js';
 
-import applyFormat from './choseFormat.js';
+import applyFormat from './formatters/index.js';
 
 import * as path from 'path';
 

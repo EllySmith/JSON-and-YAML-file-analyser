@@ -2,7 +2,7 @@ import stylishFormat from "./stylishFormat.js";
 
 import plainFormat from "./plainFormat.js";
 
-const jsonFormat = (diff) => JSON.stringify(diff);
+import jsonFormat from "./jsonFormat.js";
 
 const applyFormat = (diff, formatName) => {
   const formatSet = {
