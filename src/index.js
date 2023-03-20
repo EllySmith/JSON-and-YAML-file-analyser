@@ -28,6 +28,8 @@ const parsPath = (filepath1, filepath2, formatName = 'stylish') => {
   return formattedResult;
 };
 
+export default parsPath;
+
 export {
-  getPath, readFile, getFileFormat, parsPath,
+  getPath, readFile, getFileFormat,
 };
