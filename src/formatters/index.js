@@ -1,8 +1,8 @@
-import stylishFormat from "./stylishFormat.js";
+import stylishFormat from './stylishFormat.js';
 
-import plainFormat from "./plainFormat.js";
+import plainFormat from './plainFormat.js';
 
-import jsonFormat from "./jsonFormat.js";
+import jsonFormat from './jsonFormat.js';
 
 const applyFormat = (diff, formatName) => {
   const formatSet = {

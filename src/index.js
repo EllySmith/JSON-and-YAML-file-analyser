@@ -1,10 +1,10 @@
 import { readFileSync } from 'fs';
 
-import applyFormat from './formatters/index.js';
-
 import * as path from 'path';
 
 import yaml from 'js-yaml';
+
+import applyFormat from './formatters/index.js';
 
 import compareObjects from './compare.js';
 
@@ -18,7 +18,6 @@ const getFileFormat = (filename) => path.extname(filename).slice(1);
 
 const parsPath = (filepath1, filepath2, formatName = 'stylish') => {
   const path1 = getPath(filepath1);
-
   const data1 = parseFile(readFile(path1), getFileFormat(filepath1));
   const path2 = getPath(filepath2);
   const data2 = parseFile(readFile(path2), getFileFormat(filepath2));

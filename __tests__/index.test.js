@@ -1,5 +1,3 @@
-import compareObjects from '../src/compare';
-
 import * as path from 'path';
 
 import {
@@ -43,3 +41,4 @@ test('compare in json format', () => {
   const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/jsonresult.txt');
   expect(parsPath(fileOne, fileTwo, 'json')).toBe(result);
 });
+
