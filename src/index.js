@@ -1,7 +1,5 @@
 import { readFileSync } from 'fs';
 
-import formatStylish from './formatters/stylishFormat.js';
-
 import applyFormat from './formatters/index.js';
 
 import * as path from 'path';
@@ -10,7 +8,7 @@ import yaml from 'js-yaml';
 
 import compareObjects from './compare.js';
 
-import parseFile from './filePath.js';
+import parseFile from './parsFile.js';
 
 const getPath = (filename) => path.resolve(process.cwd(), filename);
 
@@ -24,7 +22,7 @@ const parsPath = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = parseFile(readFile(path1), getFileFormat(filepath1));
   const path2 = getPath(filepath2);
   const data2 = parseFile(readFile(path2), getFileFormat(filepath2));
-  
+
   const resultString = compareObjects(data1, data2);
   const formattedResult = applyFormat(resultString, formatName);
   return formattedResult;
