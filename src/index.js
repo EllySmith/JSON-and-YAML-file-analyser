@@ -2,8 +2,6 @@ import { readFileSync } from 'fs';
 
 import * as path from 'path';
 
-import yaml from 'js-yaml';
-
 import applyFormat from './formatters/index.js';
 
 import compareObjects from './compare.js';
