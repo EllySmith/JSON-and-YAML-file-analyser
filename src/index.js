@@ -32,5 +32,5 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
 export default genDiff;
 
 export {
-  getPath, readFile, getFileFormat, genDiff,
+  getPath, readFile, getFileFormat, genDiff, __dirname,
 };

@@ -1,10 +1,10 @@
 import * as path from 'path';
 
 import {
-  getPath, readFile, getFileFormat, genDiff,
+  getPath, readFile, getFileFormat, genDiff, __dirname,
 } from '../src/index.js';
 
-const getFixturePath = (filename) => path.join(process.cwd(), '__fixtures__', filename);
+const getFixturePath = (filename) => path.resolve(__dirname, '..', '__fixtures__', filename);
 
 test('get path', () => {
   expect(getPath('testfile1.json')).toBe('/Users/ellysmith/hexlet-js/frontend-project-46/testfile1.json');
