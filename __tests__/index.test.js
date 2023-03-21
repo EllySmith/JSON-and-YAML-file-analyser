@@ -1,50 +1,57 @@
+import { readFileSync } from 'fs';
+
 import * as path from 'path';
 
+import { fileURLToPath } from 'url';
+
 import {
-  getPath, readFile, getFileFormat, genDiff, __dirname,
+  getPath, getFileFormat, genDiff, __dirname,
 } from '../src/index.js';
 
-const getFixturePath = (filename) => path.resolve(__dirname, '..', '__fixtures__', filename);
+const dirname = fileURLToPath(import.meta.url);
+
+const getFixturePath = (filename) => path.join(dirname, '..', '..', '__fixtures__', filename);
+const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 test('get path', () => {
   expect(getPath('testfile1.json')).toBe('/Users/ellysmith/hexlet-js/frontend-project-46/testfile1.json');
 });
 
 test('get file format', () => {
-  expect(getFileFormat('__fixtures__/file1.json')).toBe('json');
+  expect(getFileFormat('file1.json')).toBe('json');
 });
 
 test('compare json files', () => {
   const fileOne = getFixturePath('file1.json');
   const fileTwo = getFixturePath('file2.json');
-  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/stylishresult.txt');
+  const result = readFile('stylishresult.txt');
   expect(genDiff(fileOne, fileTwo)).toBe(result);
 });
 
 test('compare yaml files', () => {
   const fileOne = getFixturePath('file1.yaml');
   const fileTwo = getFixturePath('file2.yaml');
-  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/yamlstylishresult.txt');
+  const result = readFile('yamlstylishresult.txt');
   expect(genDiff(fileOne, fileTwo)).toBe(result);
 });
 
 test('compare in plain format', () => {
   const fileOne = getFixturePath('file1.json');
   const fileTwo = getFixturePath('file2.json');
-  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/plainresult.txt');
+  const result = readFile('plainresult.txt');
   expect(genDiff(fileOne, fileTwo, 'plain')).toBe(result);
 });
 
 test('compare in json format', () => {
   const fileOne = getFixturePath('file1.json');
   const fileTwo = getFixturePath('file2.json');
-  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/jsonresult.txt');
+  const result = readFile('jsonresult.txt');
   expect(genDiff(fileOne, fileTwo, 'json')).toBe(result);
 });
 
 test('compare in stylish format', () => {
   const fileOne = getFixturePath('file1.json');
   const fileTwo = getFixturePath('file2.json');
-  const result = readFile('/Users/ellysmith/hexlet-js/frontend-project-46/__fixtures__/stylishresult.txt');
+  const result = readFile('stylishresult.txt');
   expect(genDiff(fileOne, fileTwo, 'stylish')).toBe(result);
 });
