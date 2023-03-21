@@ -18,14 +18,17 @@ const prepareValue = (value, depth) => {
 const stylishDiff = (diff, depth) => {
   const items = diff.flatMap(({ key, value, state }) => {
     const chars = { added: '+ ', removed: '- ', unchanged: '  ' };
-    if (state === 'updated') {
-      return [getLine(key, prepareValue(value.oldValue, depth + 1), chars.removed, depth + 1),
-        getLine(key, prepareValue(value.newValue, depth + 1), chars.added, depth + 1)];
+    switch (state) {
+      case 'updated':
+        return [getLine(key, prepareValue(value.oldValue, depth + 1), chars.removed, depth + 1),
+          getLine(key, prepareValue(value.newValue, depth + 1), chars.added, depth + 1)];
+
+      case 'complex':
+        return getLine(key, stylishDiff(value, depth + 1), '  ', depth + 1);
+
+      default:
+        return getLine(key, prepareValue(value, depth + 1), chars[state], depth + 1);
     }
-    if (state === 'complex') {
-      return getLine(key, stylishDiff(value, depth + 1), '  ', depth + 1);
-    }
-    return getLine(key, prepareValue(value, depth + 1), chars[state], depth + 1);
   });
   const body = items.join('\n');
   return wrapBrackets(body, depth);
