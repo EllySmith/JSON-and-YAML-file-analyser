@@ -2,13 +2,18 @@ import { readFileSync } from 'fs';
 
 import * as path from 'path';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import applyFormat from './formatters/index.js';
 
 import compareObjects from './compare.js';
 
 import parseFile from './parsFile.js';
 
-const getPath = (filename) => path.resolve(process.cwd(), filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const getPath = (filename) => path.resolve(__dirname, '..', filename);
 
 const readFile = (filepath) => readFileSync(filepath, 'utf8');
 
