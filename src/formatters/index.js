@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import stylishFormat from './stylishFormat.js';
 
 import plainFormat from './plainFormat.js';

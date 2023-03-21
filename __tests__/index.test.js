@@ -5,7 +5,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 
 import {
-  getPath, getFileFormat, genDiff, __dirname,
+  getPath, getFileFormat, genDiff,
 } from '../src/index.js';
 
 const dirname = fileURLToPath(import.meta.url);
