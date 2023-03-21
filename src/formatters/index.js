@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import stylishFormat from './stylishFormat.js';
 
 import plainFormat from './plainFormat.js';
@@ -10,9 +12,12 @@ const applyFormat = (diff, formatName) => {
     stylish: stylishFormat,
     json: jsonFormat,
   };
-
-  const appliedFormat = formatSet[formatName];
-  return appliedFormat(diff);
+  if (formatSet[formatName] === undefined) {
+    throw new Error('No such format!');
+  } else {
+    const appliedFormat = formatSet[formatName];
+    return appliedFormat(diff);
+  }
 };
 
 export default applyFormat;

@@ -31,6 +31,8 @@ Runs the programm with 'plain' formatter showing the differens in textual format
 
 gendiff <file1> <file2> --format json
 
-Runs the programm with with 'json' formatter whosing a json file. 
+Runs the programm with with 'json' formatter showing a json file. 
 
 [![asciicast](https://asciinema.org/a/qDFItRExBWr5T3ob8iwwwdX4u.svg)](https://asciinema.org/a/qDFItRExBWr5T3ob8iwwwdX4u)
+
+In case of a wrong format input the programm returns an Error.
