@@ -12,7 +12,7 @@ jobs:
       - run: make lint 
       - uses: paambaati/codeclimate-action@v3.0.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{ secrets.d7bdf72a9f15bfba667e5c9d35cde248e046403a6d21a8d440d7d0c2d89ffc9d }}
         with:
           coverageCommand: make test-coverage
           debug: true
