@@ -14,7 +14,7 @@ const getFixturePath = (filename) => path.join(dirname, '..', '..', '__fixtures_
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 test('get path', () => {
-  expect(getPath('testfile1.json')).toBe('/Users/ellysmith/hexlet-js/frontend-project-46/testfile1.json');
+  expect(getPath('testfile1.json')).toBe(getFixturePath('file1.json'));
 });
 
 test('get file format', () => {
