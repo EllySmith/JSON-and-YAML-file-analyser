@@ -14,7 +14,7 @@ const getFixturePath = (filename) => path.join(dirname, '..', '..', '__fixtures_
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 test('get path', () => {
-  expect(getPath('testfile1.json')).toBe(getFixturePath('file1.json'));
+  expect(getPath('../frontend-project-46/__fixtures__/file1.json')).toBe(getFixturePath('file1.json'));
 });
 
 test('get file format', () => {
