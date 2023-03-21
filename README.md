@@ -21,61 +21,16 @@ gendiff <file1> <file2>
 
 Runs the programm with the default 'stylish' formatter showing '+' infront of added items and '-' infront of deleted items. 
 
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
-</head>
-<body>
-  <div id="player"></div>
-  <script src="asciinema-player.min.js"></script>
-  <script>
-    AsciinemaPlayer.create(
-      '568854.cast',
-      document.getElementById('player'),
-      { cols: 178, rows: 49 }
-    );
-  </script>
-</body>
-</html>
+[![asciicast](https://asciinema.org/a/hTM6kheVkaOZM8zjyZsF7NqEb.svg)](https://asciinema.org/a/hTM6kheVkaOZM8zjyZsF7NqEb)
 
 gendiff <file1> <file2> --format plain
 
 Runs the programm with 'plain' formatter showing the differens in textual format.
 
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
-</head>
-<body>
-  <div id="player"></div>
-  <script src="asciinema-player.min.js"></script>
-  <script>
-    AsciinemaPlayer.create(
-      '568855.cast',
-      document.getElementById('player'),
-      { cols: 178, rows: 49 }
-    );
-  </script>
-</body>
-</html>
+[![asciicast](https://asciinema.org/a/Q8LLePbjAUlZuAiCHb8NlO211.svg)](https://asciinema.org/a/Q8LLePbjAUlZuAiCHb8NlO211)
 
 gendiff <file1> <file2> --format json
 
 Runs the programm with with 'json' formatter whosing a json file. 
 
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
-</head>
-<body>
-  <div id="player"></div>
-  <script src="asciinema-player.min.js"></script>
-  <script>
-    AsciinemaPlayer.create(
-      '568858.cast',
-      document.getElementById('player'),
-      { cols: 178, rows: 49 }
-    );
-  </script>
-</body>
-</html>
+[![asciicast](https://asciinema.org/a/qDFItRExBWr5T3ob8iwwwdX4u.svg)](https://asciinema.org/a/qDFItRExBWr5T3ob8iwwwdX4u)
